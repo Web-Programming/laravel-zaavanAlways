@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProdiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -60,3 +61,24 @@ Route::prefix("/Mahasiswa")->group(function(){
     });
     //dan lain2
 });
+
+Route::get('/dosen', function(){
+    return view('dosen');
+});
+
+Route::get('/dosen/idex', function(){
+    return view('dosen.index');
+});
+
+Route::get('/fakultas', function(){
+    // return view('fakultas.index', ["ilkom" => "Fakultas Ilmu Komputer Dan Rekayasa"]);
+    // return view('fakultas.index', ["fakultas" => ["Fakultas Ilmu Komputer Dan Rekayasa" , "Fakultas Ilmu Ekonomi"]]);
+    // return view('fakultas.index') ->with("faklutas", ["Fakultas Ilmu Komputer Dan Rekayasa", "Fakultas Ilmu Ekonomi"]);
+
+    $kampus = "Universitas Multi Data Palembang";   
+    // $fakultas = [] 
+    $fakultas = ["Fakultas Ilmu Komputer Dan Rekayasa", "Fakultas Ilmu Ekonomi"];
+    return view('fakultas.index', compact('fakultas', 'kampus'));
+});
+
+Route::get('prodi',[ProdiController::class,'index']);
