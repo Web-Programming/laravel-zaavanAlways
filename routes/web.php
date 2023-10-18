@@ -82,3 +82,15 @@ Route::get('/fakultas', function(){
 });
 
 Route::get('prodi',[ProdiController::class,'index']);
+
+Route::resource("/kurikulum",kurikulumController::class);
+
+//tes di browser dengan mengunjungi :
+//1. http://localhost::443/kurikulum/
+//2. http://localhost:443/kurikulum/create
+//3. http://localhost:443/kurikulum/1000
+//4. http://localhost:443/kurikulum/1000/edit
+
+Route::apiResource("/dosen",DosenController::class);
+//tes di browser dengan mengunjung :
+//1. http://localhost:8000/dosen/
