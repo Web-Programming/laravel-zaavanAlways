@@ -27,6 +27,17 @@ Route::get("/mahasiswa/{nama}", function($nama = "Angga"){
     echo "<h1>Hallo, Nama Saya $nama</h2>";
 });
 
+Route::get('/mahasiswa/index',function(){
+    return view('mahasiswa.index');
+});
+
+
+Route::get('/fakultas ',function(){
+    return view ('fakultas.index',[
+        "ilkom" =>"Fakultas Ilmu Komputer dan Rekayasa"
+    ]);
+});
+
 //Route dengan parameter tidak wajib
 Route::get("/mahasiswa2/{nama?}", function($nama = "Angga"){
     echo "<h1>Hallo, Nama Saya $nama</h2>";
@@ -59,4 +70,4 @@ Route::prefix("/Mahasiswa")->group(function(){
         echo "<h1>Materi Perkuliahan</h1>";
     });
     //dan lain2
-});
+}); 
