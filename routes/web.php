@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProdiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -70,4 +71,41 @@ Route::prefix("/Mahasiswa")->group(function(){
         echo "<h1>Materi Perkuliahan</h1>";
     });
     //dan lain2
+<<<<<<< HEAD
 }); 
+=======
+});
+
+Route::get('/dosen', function(){
+    return view('dosen');
+});
+
+Route::get('/dosen/idex', function(){
+    return view('dosen.index');
+});
+
+Route::get('/fakultas', function(){
+    // return view('fakultas.index', ["ilkom" => "Fakultas Ilmu Komputer Dan Rekayasa"]);
+    // return view('fakultas.index', ["fakultas" => ["Fakultas Ilmu Komputer Dan Rekayasa" , "Fakultas Ilmu Ekonomi"]]);
+    // return view('fakultas.index') ->with("faklutas", ["Fakultas Ilmu Komputer Dan Rekayasa", "Fakultas Ilmu Ekonomi"]);
+
+    $kampus = "Universitas Multi Data Palembang";   
+    // $fakultas = [] 
+    $fakultas = ["Fakultas Ilmu Komputer Dan Rekayasa", "Fakultas Ilmu Ekonomi"];
+    return view('fakultas.index', compact('fakultas', 'kampus'));
+});
+
+Route::get('prodi',[ProdiController::class,'index']);
+
+Route::resource("/kurikulum",kurikulumController::class);
+
+//tes di browser dengan mengunjungi :
+//1. http://localhost::443/kurikulum/
+//2. http://localhost:443/kurikulum/create
+//3. http://localhost:443/kurikulum/1000
+//4. http://localhost:443/kurikulum/1000/edit
+
+Route::apiResource("/dosen",DosenController::class);
+//tes di browser dengan mengunjung :
+//1. http://localhost:8000/dosen/
+>>>>>>> cba44ddeedc9f6dd7b93bad042b52b37ced443ac
