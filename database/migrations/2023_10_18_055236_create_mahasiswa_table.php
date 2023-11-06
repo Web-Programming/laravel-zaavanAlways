@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('tempat_lahir');
             $table->date('tanggal_lahir');
+            $table->text('alamat');
             $table->timestamps(); //creaye at dan  update_at
         });
     }
@@ -28,5 +29,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('mahasiswa');
     }
-    
+
 };

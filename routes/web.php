@@ -72,7 +72,7 @@ Route::prefix("/Mahasiswa")->group(function(){
         echo "<h1>Materi Perkuliahan</h1>";
     });
     //dan lain2
-}); 
+});
 
 Route::get('/dosen', function(){
     return view('dosen');
@@ -87,8 +87,8 @@ Route::get('/fakultas', function(){
     // return view('fakultas.index', ["fakultas" => ["Fakultas Komputer dan Rekayasa" , "Fakultas Ekonomi dan Bisnis"]]);
     // return view('fakultas.index') ->with("faklutas", ["Fakultas Ilmu Komputer dan Rekayasa", "Fakultas Ekonomi dan Bisnis"]);
 
-    $kampus = "Universitas Multi Data Palembang";   
-    // $fakultas = [] 
+    $kampus = "Universitas Multi Data Palembang";
+    // $fakultas = []
     $fakultas = ["Fakultas Ilmu Komputer dan Rekayasa", "Fakultas Ekonomi dan Bisnis"];
     return view('fakultas.index', compact('fakultas', 'kampus'));
 });
@@ -111,3 +111,8 @@ Route::get("mahasiswa/insert-qb",[MahasiswaController::class,'insertElq']);
 Route::get("mahasiswa/update-qb",[MahasiswaController::class,'updateElq']);
 Route::get("mahasiswa/delete-qb",[MahasiswaController::class,'deleteElq']);
 Route::get("mahasiswa/select-qb",[MahasiswaController::class,'selectElq']);
+
+//Join Dengan DB Facade
+Route::get('/prodi/all-join-facade',[ProdiController::class,'allJoinFacade']);
+
+Route::get('/prodi/all-join-elq',[ProdiController::class,'alljoinelq']);
