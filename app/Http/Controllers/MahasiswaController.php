@@ -44,6 +44,11 @@ public function updateElq(){
 }
 public function deleteElq(){
 }
+public function allJoinElq(){
+  $kampus = "Universitas Multi Data Palembang";
+  $mahasiswa = Mahasiswa::has('prodi')->get();
+  return view ('mahasiswa.index',['allmahasiswa'=>$mahasiswa, 'kampus'=>$kampus]);
+}
 
 
 }
