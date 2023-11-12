@@ -104,3 +104,4 @@ Route::get("/profil", function () {
     return view("profil");
 });
 
+Route::get('/prodi',[ProdiController::class, 'index']);
