@@ -1,2 +1,2 @@
 <h2>Dosen</h2>
-ini adalah view Dosen
+Ini Adalah View Dosen

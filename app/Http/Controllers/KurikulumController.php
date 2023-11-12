@@ -8,10 +8,12 @@ class KurikulumController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * 
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        
+        //
     }
 
     /**
@@ -35,7 +37,7 @@ class KurikulumController extends Controller
      */
     public function show(string $id)
     {
-        echo"halaman show kurikulum dengan id".$id;
+        //
     }
 
     /**
@@ -43,7 +45,7 @@ class KurikulumController extends Controller
      */
     public function edit(string $id)
     {
-        echo"halaman show kurikulum dengan id".$id;
+        //
     }
 
     /**

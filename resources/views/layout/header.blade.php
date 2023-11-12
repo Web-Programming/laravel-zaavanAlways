@@ -7,7 +7,9 @@
 </head>
 <body>
     <h1>{{ $kampus }}</h1>
-    <hr>
-    
+
+    @yield('content')
+
+    <hr> 
 </body>
 </html>
