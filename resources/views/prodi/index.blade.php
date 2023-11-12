@@ -1,7 +1,8 @@
-@extends('layout.master')
+@extends ('layout.master')
 @section('title','Halaman Prodi')
 
 @section('content')
+
     <h2>Prodi</h2>
        <table class = "table table-striped">
         <thead>
@@ -17,4 +18,8 @@
             @endforeach
         </tbody>
        </table>
+
+<h2>Prodi</h2>
+Ini halaman prodi
+
 @endsection
