@@ -18,8 +18,4 @@
             @endforeach
         </tbody>
        </table>
-
-<h2>Prodi</h2>
-Ini halaman prodi
-
 @endsection

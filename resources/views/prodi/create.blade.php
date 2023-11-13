@@ -14,10 +14,16 @@
         <div class="row pt-4">
             <div class="col">
                 <h2>Form Prodi</h2>
-                <form action="http://127.0.0.1:8000/prodi/store" method="post">
-                    <input type="hidden" name="_token" value="Qi5kFmEnEpDcTFgwArz2PEP2FW2f6IJK4kXm8e3N">
+                <form action="{{url ('prodi/store')}}" method="post">
+                    @csrf
+                  <div class="form-group">
                     <label for="nama">Nama</label>
-                    <input type="text" name="nama" id="nama" class="form-control">
+                    <input type="text" name="nama" id="nama" class="form-control"
+                    value="{{ old('nama')}}">
+                    @eror('nama')
+                    <div class="text-danger">{{$message}}</div>
+                    @enderor
+                  </div>
             </div>
             <button type="submit" class="btn btn-primary mt-2">Simpan</button>
             </form>

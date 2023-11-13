@@ -114,4 +114,8 @@ Route::get('/prodi/all-join-facade',[ProdiController::class, 'allJoinFacade']);
 
 Route::get('/prodi/all-join-elq',[ProdiController::class, 'allJoinElq']);
 
-Route::get('/prodi',[ProdiController::class, 'index']);
+Route::get('/prodi/create',[ProdiController::class, 'create']);
+
+Route::get('prodi/store',[ProdiController::class,'store']);
+
+

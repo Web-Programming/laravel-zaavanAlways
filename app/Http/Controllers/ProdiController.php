@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Http\Models\Prodi;
+use App\Models\Prodi;
 
 class ProdiController extends Controller
 {
@@ -29,5 +29,17 @@ class ProdiController extends Controller
             }
         }
         echo "<hr>";
+    }
+    public function create(){
+        return view ("prodi.create");
+    }
+    public function store(Request $request){
+        // dump($request);
+        // echo $request->nama;
+        $validateData= $request->validate([
+            'nama' =>'required|min:5|max:20',
+        ]);
+        dump($validateData);
+        echo $validateData['nama'];
     }
 }

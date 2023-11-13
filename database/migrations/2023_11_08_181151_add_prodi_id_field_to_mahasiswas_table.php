@@ -14,8 +14,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('mahasiswas', function (Blueprint $table) {
-          $table->foreignId('prodis_id')->afrer('tanggal_lahir')->constrained();
-          $table->onDelete('cascade')->onUpdate('cascade');
+          $table->foreignId('prodis_id')->afrer('alamat')->constrained()
+          ->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

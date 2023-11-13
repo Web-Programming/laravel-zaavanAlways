@@ -10,10 +10,12 @@ class MahasiswaController extends Controller
 {
     public function inseret(){
         $result = DB::insert('insert into mahasiswas(npm,nama,tempat_lahir,tanggal_lahir,
-        created_at) value(?, ?, ?, ?, ?)',['2226250023','Angga','Palembang',
-        '2004-04-23',now()]);
+        created_at) value(?, ?, ?, ?, ?)',['2226250020','Berto','new world',
+        '2002-04-20',now()]);
         dump($result);
+    
     }
+    
     public function update(){
         $result = DB::update('update mahasiswas set nama = "Genos",
         updated_at = now() where npm  = ?',['2226250023']);
@@ -83,6 +85,11 @@ class MahasiswaController extends Controller
         $kampus = "Universitas Multi Data Palembang";
         $mahasiswa = Mahasiswa::all();
         return view('mahasiswa.index',['allmahasiswa'=>$mahasiswa , 'kampus'=>$kampus]);
+    }
+    public function allJoinElq(){
+        $kampus = 'Universitas Multi Data Palembang';
+        $mahasiswas = Mahasiswa::has ('prodi')->get();
+        return view('mahasiswa.index',['allmahasiswa'=>$mahasiswas , 'kampus' => $kampus]);
     }
 }
 
