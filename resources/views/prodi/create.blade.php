@@ -14,13 +14,18 @@
         <div class="row pt-4">
             <div class="col">
                 <h2>Form Prodi</h2>
-                <form action="{{url ('prodi/store')}}" method="post">
+                <form action="{{url ('prodi/store')}}" method="post" enctype="multipart/form-data">
                     @csrf
                   <div class="form-group">
                     <label for="nama">Nama</label>
                     <input type="text" name="nama" id="nama" class="form-control"
                     value="{{ old('nama')}}">
                     @eror('nama')
+                    <div class="text-danger">{{$message}}</div>
+                    @enderor
+                    <label for="foto">Foto/Logo</label>
+                    <input type="file" name="foto" id="foto" class="form-control">
+                    @eror('eror')
                     <div class="text-danger">{{$message}}</div>
                     @enderor
                   </div>

@@ -13,6 +13,7 @@
         <tbody>
             @foreach($allmahasiswaprodi as $item)
             <tr>
+                <td><img src="{{asset('storage/'.$item->foto) }}" width="100px"></td>
                 <td>{{ $item->npm }}</td><td>{{ $item->nama }}</td><td>{{ $item->prodi}}</td>
             </tr>
             @endforeach
