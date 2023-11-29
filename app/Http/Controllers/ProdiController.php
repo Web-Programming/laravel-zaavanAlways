@@ -35,6 +35,9 @@ class ProdiController extends Controller
     }
     public function store(Request $request){
         // dump($request);
+        
+        $this -> authorize('create',Prodi::class);
+
         // echo $request->nama;
         $validateData= $request->validate([
             'nama' =>'required|min:5|max:20',
@@ -56,5 +59,7 @@ class ProdiController extends Controller
         return  redirect() -> route('prodi.create');
         // dump($validateData);
         // echo $validateData['nama'];
+       
+
     }
 }
